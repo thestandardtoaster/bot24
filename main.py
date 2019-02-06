@@ -47,6 +47,9 @@ out_handler.setLevel(logging.INFO)  # only see INFO messages
 out_handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))  # stdout format
 logger.addHandler(out_handler)
 
+for i in range(24):
+    logger.error("Ping")
+
 # Setup data file
 with open(os.path.abspath("config.yaml")) as conf:
     config = yaml.load(conf)
